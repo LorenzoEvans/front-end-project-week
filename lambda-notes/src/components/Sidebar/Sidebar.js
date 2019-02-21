@@ -39,27 +39,27 @@ const Sidebar = props => {
       <ListItemIcon>
         <BarChartIcon />
       </ListItemIcon>
-      <ListItemText primary="Reports" />
+      <ListItemText primary="View Note" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
         <LayersIcon />
       </ListItemIcon>
-      <ListItemText primary="Integrations" />
+      <ListItemText primary="Lists" />
     </ListItem>
     <Divider />
-    <ListSubheader inset>Saved reports</ListSubheader>
+    <ListSubheader inset>Settings</ListSubheader>
     <ListItem button>
       <ListItemIcon>
         <AssignmentIcon />
       </ListItemIcon>
-      <ListItemText primary="Current month" />
+      <ListItemText primary="Preferences" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
         <AssignmentIcon />
       </ListItemIcon>
-      <ListItemText primary="Last quarter" />
+      <ListItemText primary="Account" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
@@ -69,6 +69,7 @@ const Sidebar = props => {
     </ListItem>
   </div>
   // <ContainerStyle>
+  
       //  <H1>Duly Noted</H1>
       //  <Link to="/">
       //  <Div>

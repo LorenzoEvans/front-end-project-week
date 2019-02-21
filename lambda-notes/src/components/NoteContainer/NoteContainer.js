@@ -23,7 +23,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 // import SimpleTable from './SimpleTable';
 import Sidebar from '../Sidebar/Sidebar'
 
-// import { NoteContainerStyle } from './styled-components/NoteContainerStyledComponents'
+import { NoteContainerStyle } from './styled-components/NoteContainerStyledComponents'
 
 const drawerWidth = 300 ;
 
@@ -42,7 +42,7 @@ const styles = theme => ({
   ...theme.mixins.toolbar,
  },
  appBar: {
-  zIndex: theme.zIndex.Drawer + 1,
+  zIndex: theme.zIndex.Drawer + 1, 
   transition: theme.transitions.create(['width', 'margin'], {
    easing: theme.transitions.easing.sharp,
    duration: theme.transitions.duration.leavingScreen,
@@ -67,7 +67,7 @@ const styles = theme => ({
   flexGrow: 1
  },
  drawerPaper: {
-  position: 'relative',
+  // position: 'relative',
   whiteSpace: 'nowrap',
   background: "grey",
   width: drawerWidth,
@@ -123,17 +123,17 @@ onClose = () => {
  render(){
   const { classes } = this.props
   return (
-    // <NoteContainerStyle className="note_container">
-    //  {this.props.notes.map((note, index) => 
-    //  <Note 
-    //   key={index}
-    //   title={note.title}
-    //   textBody={note.textBody}
-    //   id={note._id}
-    //  />
-    //  )}
-    // </NoteContainerStyle>
     <div className={classes.root}>
+    {/* <NoteContainerStyle className="note_container">
+     {this.props.notes.map((note, index) => 
+     <Note 
+      key={index}
+      title={note.title}
+      textBody={note.textBody}
+      id={note._id}
+     />
+     )}
+    </NoteContainerStyle> */}
      <CssBaseline/>
      <AppBar
      position='absolute'
@@ -169,10 +169,10 @@ onClose = () => {
        </IconButton>
       </Toolbar>
      </AppBar>
-     <Sidebar />
+     {/* <Sidebar /> */}
      <Drawer
-     variant="permanent"
-     classes={{paper: classNames(classes.drawerPaper, !this.state.open && classes.onClose)}}
+     // variant="permanent"
+     classes={{paper: classNames(classes.drawerPaper, this.state.open && classes.onClose)}}
      open={this.state.open}
      >
       <div className={classes.toolBarIcon}>
@@ -181,7 +181,7 @@ onClose = () => {
        </IconButton>
       </div>
       <Divider />
-      {/* <List><Sidebar /></List> */}
+      <List><Sidebar/></List>
      </Drawer>
      <main>
       <div />

@@ -17,7 +17,7 @@ export const fetchNotes = () => {
  return dispatch => {
   dispatch({type: FETCHING_NOTES})
  axios
-  .get('http://localhost:3945/api/notes')
+  .get('https://fe-notes.herokuapp.com/note/get/all')
   .then(response => {
    dispatch({type: NOTES_FETCHED, payload: response.data})
   })
@@ -43,7 +43,7 @@ export const deleteNote = id => {
  return dispatch => {
   dispatch({type: DELETING})
   axios
-  .delete(`https://fe-notes.herokuapp.com/note/delete/${id}`)
+  .delete(`https://fe-notes.herokuapp.com/note/edit/${id}`)
   .then(() => {
    dispatch({type: DELETED})
   })
