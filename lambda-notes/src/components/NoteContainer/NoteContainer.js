@@ -24,12 +24,25 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 
 // import { NoteContainerStyle } from './styled-components/NoteContainerStyledComponents'
 
-class NoteContainer extends React.Component {
+const styles = {}
 
+class NoteContainer extends React.Component {
+state = {
+ open: false
+}
+
+onOpen = () => {
+ this.setState({open: true})
+}
+
+onClose = () => {
+ this.setState({open: false})
+}
  componentDidMount(){
   this.props.fetchNotes()
  }
  render(){
+  const { classes } = this.props
   return (
     // <NoteContainerStyle className="note_container">
     //  {this.props.notes.map((note, index) => 
@@ -42,7 +55,43 @@ class NoteContainer extends React.Component {
     //  )}
     // </NoteContainerStyle>
     <div>
+     <CssBaseline/>
+     <AppBar>
+      <Toolbar disableGutters={!this.state.open}>
+       <IconButton>
+        <MenuIcon />
+       </IconButton>
+       <Typography>
 
+       </Typography>
+       <IconButton>
+        <Badge>
+
+        </Badge>
+       </IconButton>
+      </Toolbar>
+     </AppBar>
+     <Drawer>
+      <div>
+       <IconButton>
+        <ChevronLeftIcon />
+       </IconButton>
+      </div>
+      <Divider />
+      <List></List>
+     </Drawer>
+     <main>
+      <div />
+      <Typography>
+
+      </Typography>
+      <Typography>
+
+      </Typography>
+      <Typography>
+
+      </Typography>
+     </main>
     </div>
   )
  }
