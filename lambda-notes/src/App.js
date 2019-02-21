@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
      <div className="App">
-      <Sidebar/>
+      {/* <Sidebar/> */}
       <Switch>
        <Route exact path="/" component={NoteContainer}/>
        <Route exact path='/note/:id' component={SingleNote}/>

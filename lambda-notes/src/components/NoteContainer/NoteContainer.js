@@ -21,9 +21,9 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 // import { mainListItems, secondaryListItems } from './listItems';
 // import SimpleLineChart from './SimpleLineChart';
 // import SimpleTable from './SimpleTable';
+import Sidebar from '../Sidebar/Sidebar'
 
-
-import { NoteContainerStyle } from './styled-components/NoteContainerStyledComponents'
+// import { NoteContainerStyle } from './styled-components/NoteContainerStyledComponents'
 
 const drawerWidth = 300 ;
 
@@ -69,6 +69,7 @@ const styles = theme => ({
  drawerPaper: {
   position: 'relative',
   whiteSpace: 'nowrap',
+  background: "grey",
   width: drawerWidth,
   transition: theme.transitions.create('width', {
    easing: theme.transitions.easing.sharp,
@@ -122,41 +123,65 @@ onClose = () => {
  render(){
   const { classes } = this.props
   return (
+    // <NoteContainerStyle className="note_container">
+    //  {this.props.notes.map((note, index) => 
+    //  <Note 
+    //   key={index}
+    //   title={note.title}
+    //   textBody={note.textBody}
+    //   id={note._id}
+    //  />
+    //  )}
+    // </NoteContainerStyle>
     <div className={classes.root}>
-    <NoteContainerStyle className="note_container">
-     {this.props.notes.map((note, index) => 
-     <Note 
-      key={index}
-      title={note.title}
-      textBody={note.textBody}
-      id={note._id}
-     />
-     )}
-    </NoteContainerStyle>
      <CssBaseline/>
-     <AppBar>
-      <Toolbar disableGutters={!this.state.open}>
-       <IconButton>
+     <AppBar
+     position='absolute'
+     className={classNames(classes.appBar, this.state.open && classes.appBarShift)}
+     >
+      <Toolbar disableGutters={!this.state.open} className={classes.toolbar}>
+       <IconButton
+       color="inherit"
+       aria-label="Open Drawer"
+       onClick={this.onOpen}
+       className={
+        classNames(
+         classes.menuButton,
+         this.state.open && classes.menuButtonHidden,
+        )
+       }
+       >
         <MenuIcon />
        </IconButton>
-       <Typography>
+       <Typography
+       component="h1"
+       variant="h6"
+       color="inherit"
+       noWrap
+       className={classes.title}
+       >
         <H1>Duly Noted</H1>
        </Typography>
-       <IconButton>
-        <Badge>
-
+       <IconButton color="inherit">
+        <Badge badgeContent={4} color="secondary">
+         <NotificationsIcon />
         </Badge>
        </IconButton>
       </Toolbar>
      </AppBar>
-     <Drawer>
-      <div>
-       <IconButton>
+     <Sidebar />
+     <Drawer
+     variant="permanent"
+     classes={{paper: classNames(classes.drawerPaper, !this.state.open && classes.onClose)}}
+     open={this.state.open}
+     >
+      <div className={classes.toolBarIcon}>
+       <IconButton onClick={this.onClose}>
         <ChevronLeftIcon />
        </IconButton>
       </div>
       <Divider />
-      <List></List>
+      {/* <List><Sidebar /></List> */}
      </Drawer>
      <main>
       <div />
