@@ -1,5 +1,6 @@
 import React from 'react'
 import Note from './Note'
+import { H1 } from './styled-components/NoteContainerStyledComponents'
 import { connect } from 'react-redux'
 import { fetchNotes } from '../../actions/index'
 import { withRouter } from 'react-router'
@@ -24,7 +25,48 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 
 // import { NoteContainerStyle } from './styled-components/NoteContainerStyledComponents'
 
-const styles = {}
+const drawerWidth = 300 ;
+
+const styles = theme => ({
+ root: {
+  display: 'flex',
+ },
+ toolbar: {
+  paddingRight: 24,
+ },
+ toolBarIcon: {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'flex-end',
+  padding: '0 8px',
+  ...theme.mixins.toolbar,
+ },
+ appBar: {
+  zIndex: theme.zIndex.Drawer + 1,
+  transition: theme.transitions.create(['width', 'margin'], {
+   easing: theme.transitions.easing.sharp,
+   duration: theme.transitions.duration.leavingScreen,
+  }),
+ },
+ appBarShift: {
+  marginLeft: drawerWidth,
+  width: `calc(100% - ${drawerWidth}px)`,
+  transition: theme.transitions.create(['width', 'margin'], {
+   easing: theme.transitions.easing.sharp,
+   duration: theme.transitions.duration.enteringScreen,
+  }),
+ },
+ menuButton: {
+  marginLeft: 12,
+  marginRight: 36,
+ },
+ menuButtonHidden: {
+  display: 'none',
+ },
+ title: {
+  flexGrow: 1
+ }
+})
 
 class NoteContainer extends React.Component {
 state = {
@@ -62,7 +104,7 @@ onClose = () => {
         <MenuIcon />
        </IconButton>
        <Typography>
-
+        <H1>Duly Noted</H1>
        </Typography>
        <IconButton>
         <Badge>

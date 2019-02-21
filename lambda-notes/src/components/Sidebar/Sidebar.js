@@ -21,19 +21,19 @@ const Sidebar = props => {
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
-      <ListItemText primary="Dashboard" />
+      <ListItemText primary="Notes" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
         <ShoppingCartIcon />
       </ListItemIcon>
-      <ListItemText primary="Orders" />
+      <ListItemText primary="Edit Note" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
         <PeopleIcon />
       </ListItemIcon>
-      <ListItemText primary="Customers" />
+      <ListItemText primary="Add Note" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
@@ -65,7 +65,7 @@ const Sidebar = props => {
       <ListItemIcon>
         <AssignmentIcon />
       </ListItemIcon>
-      <ListItemText primary="Year-end sale" />
+      <ListItemText primary="Logout" />
     </ListItem>
   </div>
   // <ContainerStyle>

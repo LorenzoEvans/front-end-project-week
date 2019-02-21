@@ -9,3 +9,8 @@ export const NoteContainerStyle = styled.div `
  width: 80% ;
  justify-content: space-between ;
 `
+
+export const H1 = styled.h1 `
+font-size: 2rem;
+font-family: 'Permanent Marker'
+`
