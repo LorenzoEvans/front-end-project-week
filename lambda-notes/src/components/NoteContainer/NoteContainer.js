@@ -23,7 +23,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 // import SimpleTable from './SimpleTable';
 
 
-// import { NoteContainerStyle } from './styled-components/NoteContainerStyledComponents'
+import { NoteContainerStyle } from './styled-components/NoteContainerStyledComponents'
 
 const drawerWidth = 300 ;
 
@@ -65,6 +65,42 @@ const styles = theme => ({
  },
  title: {
   flexGrow: 1
+ },
+ drawerPaper: {
+  position: 'relative',
+  whiteSpace: 'nowrap',
+  width: drawerWidth,
+  transition: theme.transitions.create('width', {
+   easing: theme.transitions.easing.sharp,
+   duration: theme.transitions.duration.enteringScreen,
+  }),
+ },
+ drawerPaperClose: {
+  overflowX: 'hidden',
+  transition: theme.transitions.create('width', {
+   easing: theme.transitions.easing.sharp,
+   duration: theme.transitions.duration.leavingScreen
+  }),
+  width: theme.spacing.unit * 7,
+  [theme.breakpoints.up('sm')] :{
+   width: theme.spacing.unit * 9
+  },
+ },
+ appBarSpacer: theme.mixins.toolbar,
+ content: {
+  flexGrow: 1,
+  padding: theme.spacing.unit * 3,
+  height: '100vh',
+  overflow: 'auto',
+ },
+ chartContainer: {
+  marginLeft: -22
+ },
+ tableContainer: {
+  height: 320
+ },
+ h5: {
+  marginBottom: theme.spacing.unit * 2
  }
 })
 
@@ -86,17 +122,17 @@ onClose = () => {
  render(){
   const { classes } = this.props
   return (
-    // <NoteContainerStyle className="note_container">
-    //  {this.props.notes.map((note, index) => 
-    //  <Note 
-    //   key={index}
-    //   title={note.title}
-    //   textBody={note.textBody}
-    //   id={note._id}
-    //  />
-    //  )}
-    // </NoteContainerStyle>
-    <div>
+    <div className={classes.root}>
+    <NoteContainerStyle className="note_container">
+     {this.props.notes.map((note, index) => 
+     <Note 
+      key={index}
+      title={note.title}
+      textBody={note.textBody}
+      id={note._id}
+     />
+     )}
+    </NoteContainerStyle>
      <CssBaseline/>
      <AppBar>
       <Toolbar disableGutters={!this.state.open}>
@@ -147,4 +183,4 @@ const mapStateToProps = state => {
 }
 
 
-export default withRouter(connect(mapStateToProps, { fetchNotes })(NoteContainer))
+export default withRouter(connect(mapStateToProps, { fetchNotes })(withStyles(styles)(NoteContainer)))

@@ -8,7 +8,7 @@ const Note = props => {
  
  return (
   <div> 
-   {/* <Link to={`/note/${props.id}`} style={{ textDecoration: 'none', color: 'black' }} >
+   <Link to={`/note/${props.id}`} style={{ textDecoration: 'none', color: 'black' }} >
     <Card>
      <CardBody>
       <CardTitle>
@@ -20,7 +20,7 @@ const Note = props => {
        </CardText>
       </CardBody>
      </Card>
-   </Link> */}
+   </Link>
   </div>
  )
 }
