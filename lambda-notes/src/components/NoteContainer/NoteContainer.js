@@ -41,7 +41,7 @@ onClose = () => {
   const { classes } = this.props
   return (
     <div className={classes.root}>
-     <CssBaseline/>
+     {/* <CssBaseline/>
      <AppBar
      position='absolute'
      className={classNames(classes.appBar, this.state.open && classes.appBarShift)}
@@ -77,7 +77,7 @@ onClose = () => {
       </Toolbar>
      </AppBar>
      <Drawer
-     variant="responsive"
+     variant="temporary"
      classes={{paper: classNames(classes.drawerPaper, this.state.open && classes.onClose)}}
      open={this.state.open}
      >
@@ -92,7 +92,7 @@ onClose = () => {
      <main className={classes.content}>
       <div className={classes.appBarSpacer} />
       <Typography component="div" className={classes.chartContainer}>
-    {/* <NoteContainerStyle className="note_container">
+    <NoteContainerStyle className="note_container">
      {this.props.notes.map((note, index) => 
      <Note 
       key={index}
@@ -101,9 +101,9 @@ onClose = () => {
       id={note._id}
      />
      )}
-    </NoteContainerStyle> */}
+    </NoteContainerStyle>
       </Typography>
-     </main>
+     </main> */}
     </div>
   )
  }

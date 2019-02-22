@@ -5,12 +5,18 @@ import CreateView from './components/NoteAppViews/CreateView'
 import './App.css';
 import NoteContainer from './components/NoteContainer/NoteContainer'
 import SingleNote from './components/NoteAppViews/SingleNote'
-
+import Sidebar from './components/Sidebar/Sidebar';
+import { fetchNotes } from './actions/index'
 class App extends Component {
+
+ componentDidMount(){
+  fetchNotes()
+ }
   render() {
     return (
      <div className="App">
      <NoteContainer />
+     <Sidebar />
       {/* <Switch>
        <Route exact path="/" component={NoteContainer}/>
        <Route exact path='/note/:id' component={SingleNote}/>
