@@ -1,7 +1,9 @@
 import styled from 'styled-components'
-import { drawerWidth } from '../../NoteContainer/styled-components/NoteContainerStyledComponents'
+import { drawerWidth } from '../../NoteContainer/styled-components/NoteContainerStyledComponents-Deprecated'
 export const H1 = styled.h1 `
 font-size: 1.6rem ;
+color: Black;
+text-shadow: 3px 4px 5px #F5F5F5
 font-family: 'Permanent Marker' ;
 margin-bottom: 5px ;
 `
